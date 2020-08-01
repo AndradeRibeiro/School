@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200801171431_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200801171431_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200801172608_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200801172608_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200801173032_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200801173032_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200801210508_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200801210508_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200802160408_AddCategoryAsRequired.cs" />
+    <Compile Remove="Migrations\20200802160408_AddCategoryAsRequired.Designer.cs" />
+    <Compile Remove="Migrations\20200802160540_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200802160540_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200802160626_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200802160626_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200802161344_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200802161344_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\School.Domain\School.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
