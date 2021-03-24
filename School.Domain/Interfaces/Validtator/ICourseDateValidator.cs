@@ -4,7 +4,6 @@ namespace School.Domain.Interfaces.Validtator
 {
     public interface ICourseDateValidator
     {
-        void ValidateIfExistPeriod(CourseModel courseModel);
-        void ValidateIfExistPeriodToUpdate(CourseModel courseModel, int id);
+        void ValidateIfExistPeriod(CourseModel courseModel, int id);
     }
 }

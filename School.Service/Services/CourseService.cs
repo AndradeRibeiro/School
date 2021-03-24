@@ -53,7 +53,7 @@ namespace School.Service.Services
             if (entityExist == null)
                 throw new Exception("Este curso não existe");
 
-            _courseValidator.ValidateBeforeUpdate(courseModel, id);
+            _courseValidator.ValidateBeforeSave(courseModel);
             var course = courseModel.ConvertToEntityUpdate(id, entityExist);
             _baseRepository.Update(course);
         }

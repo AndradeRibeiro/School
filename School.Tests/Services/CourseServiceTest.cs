@@ -121,13 +121,13 @@ namespace School.Tests.Services
 
             _baseRepository.Setup(x => x.GetById(It.IsAny<int>())).Returns(courseFixture);
             _baseRepository.Setup(x => x.Update(It.IsAny<CourseEntity>()));
-            _courseValidator.Setup(x => x.ValidateBeforeUpdate(courseModel, courseModel.Id));
+            _courseValidator.Setup(x => x.ValidateBeforeSave(courseModel));
 
             CourseService service = new CourseService(_baseRepository.Object, _courseValidator.Object);
             service.Update(courseModel.Id, courseModel);
 
             _baseRepository.Verify(x => x.Update(It.IsAny<CourseEntity>()), Times.Once);
-            _courseValidator.Verify(x => x.ValidateBeforeUpdate(courseModel, courseModel.Id), Times.Once);
+            _courseValidator.Verify(x => x.ValidateBeforeSave(courseModel), Times.Once);
         }
 
         [Fact]

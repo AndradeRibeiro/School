@@ -14,10 +14,9 @@ namespace School.Infra.Repository
             _context = context;
         }
 
-        public CourseEntity GetCourseByInitialAndFinalDate(DateTime initialDate, DateTime finalDate)
+        public CourseEntity GetCourseByInitialAndFinalDate(DateTime initialDate, DateTime finalDate, int id)
         {
-            return _context.Courses.FirstOrDefault(x => (x.InitialDate.Day == initialDate.Day && x.InitialDate.Month == initialDate.Month && x.InitialDate.Year == initialDate.Year) &&
-                                                        (x.FinalDate.Day == finalDate.Day && x.FinalDate.Month == finalDate.Month && x.FinalDate.Year == finalDate.Year));
+            return _context.Courses.FirstOrDefault(x => (x.InitialDate.Date == initialDate && x.FinalDate.Date == finalDate.Date && x.Id != id));
         }
     }
 }

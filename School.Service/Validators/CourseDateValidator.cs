@@ -14,23 +14,16 @@ namespace School.Service.Validators
             _courseRepository = courseRepository;
         }
 
-        public void ValidateIfExistPeriod(CourseModel courseModel)
+        public void ValidateIfExistPeriod(CourseModel courseModel, int id = 0)
         {
-            var courseEntity = GetCourseByInitialAndFinalDate(courseModel);
+            var courseEntity = GetCourseByInitialAndFinalDate(courseModel, id);
             if (courseEntity != null)
                 throw new Exception("Existe(m) curso(s) planejados(s) dentro do período informado.");
         }
 
-        public void ValidateIfExistPeriodToUpdate(CourseModel courseModel, int id)
+        private CourseEntity GetCourseByInitialAndFinalDate(CourseModel courseModel, int id)
         {
-            var courseEntity = GetCourseByInitialAndFinalDate(courseModel);
-            if (courseEntity != null && courseEntity.Id != id)
-                throw new Exception("Existe(m) curso(s) planejados(s) dentro do período informado.");
-        }
-
-        private CourseEntity GetCourseByInitialAndFinalDate(CourseModel courseModel)
-        {
-            return _courseRepository.GetCourseByInitialAndFinalDate(courseModel.InitialDate, courseModel.FinalDate);
+            return _courseRepository.GetCourseByInitialAndFinalDate(courseModel.InitialDate, courseModel.FinalDate, id);
         }
     }
 }

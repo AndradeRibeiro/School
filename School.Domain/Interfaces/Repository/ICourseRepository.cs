@@ -5,6 +5,6 @@ namespace School.Domain.Interfaces.Repository
 {
     public interface ICourseRepository
     {
-        CourseEntity GetCourseByInitialAndFinalDate(DateTime initalDate, DateTime finalDate);
+        CourseEntity GetCourseByInitialAndFinalDate(DateTime initialDate, DateTime finalDate, int id);
     }
 }
